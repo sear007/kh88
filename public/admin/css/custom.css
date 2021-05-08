@@ -1,0 +1,10 @@
+.table thead th{
+    font-weight: normal;
+    font-size: 11pt;
+    text-align: center;
+    color: #bead61;
+}
+.table tbody td{
+    font-size: 12pt;
+    color: #444443;
+}

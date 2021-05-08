@@ -1,0 +1,104 @@
+.main .jackpot-container {
+position: relative;
+margin: 40px 0;
+text-align: center;
+height: 216px;
+}
+.main .jackpot-container .img-jackpot {
+width: 1077px;
+height: 216px;
+display: inline-block;
+background-image: url("./../imgs/jackpot/jackpot.png");
+background-repeat: no-repeat;
+}
+.center-container {
+position: absolute;
+top: 83px;
+width: 100%;
+}
+.jackpot-container .jackpot-light-circle{
+width: 403px;
+height: 98px;
+display: inline-block;
+background-position: center;
+background-image: url("./../imgs/jackpot/box_light.gif");
+background-repeat: no-repeat;
+}
+.main .jackpot-container .jackpot{
+position: absolute;
+display: block;
+width: 100%;
+top: 110px;
+}
+.main .jackpot-container .star{
+position: absolute;
+background: url("./../imgs/jackpot/start_jackpot.png?v=10") no-repeat;
+background-size: contain;
+overflow: hidden;
+opacity: 0;
+animation-name: starAnimate;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+animation-duration: 1.65s;
+animation-direction: normal;
+animation-fill-mode: both;
+}
+.main .jackpot-container .jackpot span{
+font-weight: bold;
+font-size: 35px;
+width: 100%;
+display: inline-block;
+text-align: center;
+color: "#fff";
+}
+.main .jackpot-container .star.star-1{
+width: 52px;
+height: 47px;
+top: 36px;
+left: 181px;
+animation-delay: .5s;
+}
+
+.main .jackpot-container .star.star-2 {
+width: 36px;
+height: 34px;
+top: -3px;
+left: 327px;
+animation-delay: 1.5s;
+}
+.main .jackpot-container .star.star-3 {
+width: 52px;
+height: 47px;
+top: 32px;
+left: 530px;
+animation-delay: 2.5s;
+}
+.main .jackpot-container .star.star-4 {
+width: 52px;
+height: 47px;
+top: -8px;
+left: 597px;
+animation-delay: 3.5s;
+}
+.main .jackpot-container .star.star-5 {
+width: 52px;
+height: 47px;
+top: 15px;
+left: 681px;
+animation-delay: 4.5s;
+}
+.main .jackpot-container .star.star-6 {
+width: 52px;
+height: 47px;
+top: 14px;
+left: 747px;
+animation-delay: 6.5s;
+}
+
+@keyframes starAnimate{
+from{opacity:0}
+25%{opacity:.5}
+50%{opacity:1}
+75%{opacity:.5}
+100%{opacity:0}
+}

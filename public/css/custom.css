@@ -1,0 +1,111 @@
+
+.navigation{
+    border-bottom: 1px solid #292929;
+}
+.x-small{
+    font-size: .75rem;
+}
+.bg-grey{
+    background: #363636;
+}
+.footer{
+    border-top: 1px solid #292929;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus{
+    outline:none!important;
+    box-shadow:none!important;
+}
+.nav-bottom span{
+    font-size: .7rem;
+    color: #dccda3;
+    margin-right: 10px;
+}
+.nav-bottom .btn-outline-primary {
+    color: #dccda3;
+    border-color: #dccda3;
+}
+.nav-bottom .btn-outline-primary:hover {
+    color: #000;
+    background-color: #dccda3;
+    border-color: #dccda3;
+}
+.nav-bottom .btn-outline-primary.dropdown-toggle.show {
+    color: #000;
+    background-color: #dccda3;
+    border-color: #dccda3;
+}
+.nav-bottom .dropdown-menu-dark .dropdown-item.active, .dropdown-menu-dark .dropdown-item:active {
+    color: #fff;
+    background-color: #dccda3;
+}
+
+.btn-primary.active{
+    color: #fff!important;
+    background-color: #000000!important;
+}
+.btn .badge{
+    padding: 3px!important;
+    font-size: 7pt!important;
+    font-weight: 900!important;
+    position: absolute!important;
+    left: -5px!important;
+    top: -5px!important;
+  }
+  .balance-top {
+    position: relative;
+  }
+  .balance-top span{
+    color: #ffffff;
+  }
+  .balance-top .username{
+    position: relative;
+    display: block;
+    font-size: 9pt;
+  }
+  .balance-top .amount{
+    margin-top: -3px;
+    font-size: 9pt;
+    display: block;
+    color: #84b752;
+  }
+
+
+ 
+  .spinner {
+    width: var(--width);
+    height: var(--height);
+    margin: var(--margin) auto;
+    background-color: var(--color);
+    border-radius: 100%;  
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+  }
+  
+  @-webkit-keyframes sk-scaleout {
+    0% { -webkit-transform: scale(0) }
+    100% {
+      -webkit-transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes sk-scaleout {
+    0% { 
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 100% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+
+  .components li{
+    transition: ease-in-out .5s;
+}
+.components .active{
+    background: #16181b;
+}
+.components li:hover{
+    background: #16181b;
+}

@@ -1,0 +1,116 @@
+.img-wrapper{
+    position: relative;
+}
+.img-wrapper .coin{
+    width: 34px;
+    height: 33px;
+    background-image: url('./../imgs/icon/Coin.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 10px;
+    left: 35px;
+    z-index: 4;
+    animation: coinAnimate .5s steps(14) infinite;
+}
+.img-wrapper .jackpot{
+    position: absolute;
+    bottom:0px;
+    left: 10%;
+    padding: .2rem 2rem;
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #222221 0%, #0f0a00 74%);
+    color: #ffde7a;
+    font-weight: bold;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: inset -2px -4px 2px #0f0a00;
+    border: 1px solid #d6b61a;
+}
+.img-wrapper .link-wrapper{
+    position: absolute;
+    bottom:30%;
+    left:25%;
+    opacity: 0;
+    transition: .5s;
+}
+.img-wrapper:hover .link-wrapper{
+    opacity: 1;
+}
+.img-wrapper:hover img{
+    -webkit-filter: blur(1px); /* Safari 6.0 - 9.0 */
+    filter: blur(1px);
+}
+.link-wrapper a,.link-wrapper button{
+    font-weight: bold;
+    box-shadow: 5px 5px 0rem 0px rgb(0 0 0);
+    transition: 0.5s;
+}
+.link-wrapper a:hover,.link-wrapper button:hover{
+    color: #ffde7a;
+    box-shadow: none;
+    background: #a07801;
+}
+.games-list-background{
+    background: #000;
+    padding:2rem;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.game-thumb{
+}
+
+
+.cool-link {
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    color: #dccda3;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #dccda3;
+    transition: width .3s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+
+
+
+@-webkit-keyframes coinAnimate {
+from {
+background-position: 0 0%}
+to {
+background-position: 100% 0;
+}
+}@-moz-keyframes coinAnimate {
+from {
+background-position: 0 0%}
+to {
+background-position: 100% 0;
+}
+}@-ms-keyframes coinAnimate {
+from {
+background-position: 0 0%}
+to {
+background-position: 100% 0;
+}
+}@keyframes coinAnimate {
+from {
+background-position: 0 0%}
+to {
+background-position: 100% 0;
+}
+}
