@@ -11,29 +11,47 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
+          <i class="far fa-bell fa-2x"></i>
+          <span class="badge badge-warning navbar-badge" id="badge"></span>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" id="dropdown-notification">
         </div>
       </li>
     </ul>
   </nav>
   <!-- /.navbar -->
+  @push('scripts')
+  <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+  <script>
+
+          function getNotification(){
+            var data = $.get('/admin/notifications',(data)=>{
+              $("#dropdown-notification").empty();
+            $("#badge").text(data.counter);
+            //deposit
+            $.map(data.deposits,function(v,k){
+              var element = `<a href="/admin/deposits" class="dropdown-item">
+                            <i class="fas fa-hand-holding-usd mr-2"></i> <span class='small'>${v.payment}</span> - <span class='small text-success'>${formatNumber(parseInt(v.outStandingCredit),2,"USD")}</span> 
+                            <span class="d-block text-muted text-right text-sm">${moment(v.created_at).fromNow()}</span>
+                          </a>
+                          <div class="dropdown-divider"></div>`;
+              $("#dropdown-notification").append(element);
+            });
+            //withdraw
+            $.map(data.withdraws,function(v,k){
+              var element = `<a href="/admin/deposits" class="dropdown-item">
+                            <i class="fas fa-dollar-sign mr-2"></i> <span class='small'>${v.payment}</span> - <span class='small text-danger'>${formatNumber(parseInt(v.outStandingCredit),2,"USD")}</span> 
+                            <span class="d-block text-muted text-right text-sm ">${moment(v.created_at).fromNow()}</span>
+                          </a>
+                          <div class="dropdown-divider"></div>`;
+              $("#dropdown-notification").append(element);
+            });
+          });
+          }
+          getNotification();
+          setInterval(() => {
+            getNotification();
+          }, 3000);
+
+    </script>
+  @endpush

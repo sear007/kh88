@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}">
   @stack('css')
 </head>
-<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
+<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 @include('dashboard.admin.inc.navbar')
 @include('dashboard.admin.inc.sidebar')
@@ -28,6 +28,7 @@
 </div>
 <script src="{{ asset('/admin/plugins/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('/admin/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
 <script src="{{ asset('/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('/admin/plugins/sweetalert2/sweetalert2.all.min.js') }}"></script>
 <script src="{{ asset('/admin/js/adminlte.js') }}"></script>

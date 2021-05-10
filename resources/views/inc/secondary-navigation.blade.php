@@ -12,12 +12,6 @@
                <img src="{{ asset("icons/united-kingdom.svg") }}" width="25px" alt="english"> English</span>
               </a>
             </li>
-            <li>
-              <a class="dropdown-item" href="#">
-                <img src="{{ asset("icons/cambodia.svg") }}" width="25px" alt="english">
-                Khmer
-              </a>
-            </li>
           </ul>
         </div>
       </div>

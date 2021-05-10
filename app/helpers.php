@@ -21,3 +21,8 @@ if(!function_exists('fetchData')){
     return $result;
     }
 }
+if(!function_exists('logo')){
+    function logo(){
+        return '<img src="'.asset('imgs/logo/logo.png').'" height="40px" alt="KH88" />';
+    }
+}

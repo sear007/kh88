@@ -3,6 +3,9 @@
 <div class="card">
     <div class="card-header">
       <h3 class="card-title">Withdraws Request</h3>
+      <div class="card-tools">
+          <button onclick="reload();" type="button" class="btn btn-tool"><i class="fas fa-sync"></i></button>
+      </div>
     </div>
     <div class="card-body">
       <table id="withdraw-table" class="table table-bordered table-striped table-sm">
@@ -10,10 +13,9 @@
         <tr>
           <th>Username</th>
           <th>Payment</th>
+          <th>Last Payment</th>
           <th>Credit</th>
-          <th>Before Credit</th>
           <th>OutStanding Credit</th>
-          <th>Transaction</th>
           <th>Request On</th>
           <th><i class="fas fa-info"></i></th>
           <th><i class="fas fa-cogs"></i></th>
@@ -50,8 +52,15 @@
 <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script>
-    $(function () {
-      var table = $("#withdraw-table").DataTable({
+    getData();
+    function reload(){
+        $(function(){
+            $("#withdraw-table").DataTable().ajax.reload();
+        })
+    }
+    function getData(){
+        $(function(){
+            var table = $("#withdraw-table").DataTable({
             "processing": true,
             'serverSide': true,
             "pageLength": 25,
@@ -59,17 +68,12 @@
             columns: [
                 {"data":"username"},
                 {"data":"payment"},
+                {"data":"lastPayment"},
                 {"data":"credit",render:function(data){
-                    return formatNumber(parseInt(data),2,"USD");
-                }},
-                {"data":"beforeCredit",render:function(data){
                     return formatNumber(parseInt(data),2,"USD");
                 }},
                 {"data":"outStandingCredit",render:function(data){
                     return formatNumber(parseInt(data),2,"USD");
-                }},
-                {"data":"transaction",render:function(data){
-                    return data.toUpperCase();
                 }},
                 {"data": "created_at",render: function(data){
                     return moment(data).fromNow();
@@ -92,10 +96,8 @@
             }}
         ],
     });
-    setInterval(() => {
-        table.ajax.reload();
-    }, 10000);
-    });
+        })
+    }
       
     function remove(id){
         Swal.fire({

@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="wrapper d-flex align-items-stretch">
-    @include('dashboard.inc.navbar')
+    @include('dashboard.inc.sidebar')
     <div id="content" class="">
         @include('dashboard.inc.header')
         @yield('dashboard-content')

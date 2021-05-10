@@ -21,10 +21,10 @@ class CreateCreditsTable extends Migration
             $table->string('credit');
             $table->string('beforeCredit');
             $table->string('outStandingCredit');
-            $table->string('freeCredit')->default(0);
-            $table->integer('rollover')->default(30);
             $table->string('lastPayment');
-            $table->string('transaction');
+            $table->string('transaction')->nullable();
+            $table->string('account_number')->nullable();
+            $table->string('account_name')->nullable();
             $table->boolean('status')->default(false);
             $table->timestamps();
         });

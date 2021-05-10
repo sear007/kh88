@@ -1,13 +1,8 @@
 @extends('dashboard.app')
 @section('dashboard-content')
-<div class="nav-scroller shadow-sm">
-<nav class="nav nav-underline" aria-label="Secondary navigation">
-    <a class="nav-link active" href="#"><i class="me-1 fas fa-hand-holding-usd"></i>Deposit</a>
-    <a class="nav-link" href="#"><i class="me-1 fas fa-dollar-sign"></i>Withdraw</a>
-    <a class="nav-link" href="#"><span class="me-1 fa fa-funnel-dollar"></span> Transactions</a>
-    <a class="nav-link" href="#"><span class="me-1 fa fa-money-check-alt"></span>Bank Accounts</a>
-</nav>
-</div>
+
+@include('dashboard.inc.navbar')
+
     <div class="container py-3">
         <div class="card shadow-sm">
             <div class="card-body">

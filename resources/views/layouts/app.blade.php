@@ -28,7 +28,7 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}" ></script>
     <script src="{{ asset('plugins/sweetalert2/sweetalert2.all.min.js') }}"></script>
-    <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/global.js') }}"></script>
     <script src="{{ asset('js/offcanvas.js') }}"></script>
     <script src="{{ asset('js/live-time.js') }}"></script>
     <script src="{{ asset('js/countUp.js') }}"></script>

@@ -8,10 +8,7 @@
 </button>
 <a href="/" class="btn btn-primary">
     <i class="fa fa-dice"></i> <span class="d-none d-md-inline">Casino</span>
-</a>
-<a href="/" class="btn btn-primary">
-    <i class="fa fa-satellite-dish"></i> <span class="d-none d-md-inline">Live Casino</span>
-</a>
+</a>    
 </div>
 <div class="d-flex align-items-center">
     <a href="#" onclick="getCredit()" class="me-2"><i id="spiner-synce" class="fas fa-sync"></i></a>

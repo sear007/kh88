@@ -1,36 +1,52 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/signin.css') }}">
+    <title>KH88 | Login</title>
+</head>
+<body class="register-page">
+    <div class="register-box">
+        <div class="register-logo">
+          <a href="/">{!! logo() !!}</a>
         </div>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+        <div class="card">
+          <div class="card-body register-card-body">
+            <p class="login-box-msg">Retrieve Password  </p>
+      
+            <form action="/forgot-password" method="POST">
+                @csrf
+                <div class="mb-3">
+                    <div class="input-group">
+                      <input type="text" id="username" name="username" class="form-control" placeholder="Username Or Email">
+                      <div class="input-group-text">
+                      <span class="fas fa-user"></span>
+                      </div>
+                    </div>
+                    @if (session('Error'))
+                        <span class="text-danger">
+                            {{ session('Error') }}
+                        </span>
+                    @endif
+                    @if (session('Success'))
+                        <span class="text-success">
+                            {{ session('Success') }}
+                        </span>
+                    @endif
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <button type="submit" id="btn-login" class="btn btn-primary btn-block">Submit</button>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

@@ -1,6 +1,7 @@
-<div class="main py-3 bg-dark d-none d-lg-block">
+<div class="main py-3 bg-dark ">
+    <h1 class="mb-5 display-1 text-white font-weight-bold text-center  d-md-none text-uppercase">Proggresive Jackpot</h1>
     <div class="jackpot-container">
-        <span class="img-jackpot"></span>
+        <span class="img-jackpot d-none d-md-block"></span>
         <div class="center-container">
             <div class="jackpot-light-circle"></div>
         </div>
@@ -10,10 +11,10 @@
         </div>
         <div class="star star-1"></div>
         <div class="star star-2"></div>
-        <div class="star star-3"></div>
-        <div class="star star-4"></div>
-        <div class="star star-5"></div>
-        <div class="star star-6"></div>
+        <div class="star star-3 d-none d-md-block"></div>
+        <div class="star star-4 d-none d-md-block"></div>
+        <div class="star star-5 d-none d-md-block"></div>
+        <div class="star star-6 d-none d-md-block"></div>
     </div>
 </div>
 

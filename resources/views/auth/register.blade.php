@@ -13,12 +13,11 @@
 <body class="register-page">
     <div class="register-box">
         <div class="register-logo">
-          <a href="/"><b>KH88</b>.xyz</a>
+          <a href="/">{!! logo() !!}</a>
         </div>
         <div class="card">
           <div class="card-body register-card-body">
             <p class="login-box-msg">Register a new membership</p>
-      
             <form action="/register" method="post">
                @csrf
               <div class="mb-3">
@@ -63,7 +62,7 @@
                       </div>
                   </div>
               </div>
-              <div class="row">
+              <div class="row mb-3">
                 <div class="col-8">
                   <div class="icheck-primary">
                     <input  @if (old('terms')) checked @endif type="checkbox" id="agreeTerms" name="terms" value="agree">
@@ -80,7 +79,7 @@
                 </div>
               </div>
             </form>
-            <a href="/login" class="text-center">I already have a membership</a>
+            <a href="/login" class="btn btn-dark btn-sm">I already have a membership</a>
           </div>
         </div>
       </div>

@@ -4,12 +4,35 @@ namespace App\Http\Controllers;
 
 use App\Models\Credit;
 use App\Models\Deposit;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 class AdminController extends Controller
 {
+
+    public function notifications(){
+        $deposits = Credit::where('outStandingCredit','>',0)->where('status',false)->get(['username','payment','outStandingCredit']);
+        $withdraws = Credit::where('outStandingCredit','<',0)->where('status',false)->get(['username','payment','outStandingCredit']);
+        return response()->json([
+            'deposits'=>$deposits,
+            'withdraws'=>$withdraws,
+            'counter'=>count($withdraws)+count($deposits),
+        ]);
+    }
+
+    public function dataJson(){
+        $withdraws = Credit::where('outStandingCredit','<',0)->get()->pluck('outStandingCredit')->sum();
+        $deposits = Credit::where('outStandingCredit','>',0)->get()->pluck('outStandingCredit')->sum();
+        $users = count(User::where('type','!=','admin')->get());
+        return response()->json([
+            'withdraws'=>$withdraws,
+            'deposits'=>$deposits,
+            'users'=>$users,
+            'revenue'=>intval($deposits)+intval($withdraws),
+        ]);
+    }
 
     public function index(){
         return view('dashboard.admin.pages.index');
